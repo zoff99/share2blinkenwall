@@ -1,4 +1,4 @@
-package com.tengu.sharetoclipboard;
+package com.zoffcc.applications.sharetoclipboard;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
