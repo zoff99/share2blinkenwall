@@ -6,47 +6,17 @@ android {
 
     defaultConfig {
         applicationId "com.tengu.sharetoclipboard"
-        minSdkVersion 8
+        minSdkVersion 15
         targetSdkVersion 23
-        versionCode 17
-        versionName "1.6.2"
+        versionCode 10000
+        versionName "1.0.0"
     }
-
-	lintOptions {
-		 disable 'MissingTranslation'
-	}
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
-    }
-
-    /*
-     * To sign release build, create file gradle.properties in ~/.gradle/ with this content:
-     *
-     * signingStoreLocation=/home/key.store
-     * signingKeyAlias=alias
-     *
-     * and set the KSTOREPWD env var to the store and key passwords (should be the same)
-     */
-    if (project.hasProperty('signingStoreLocation') &&
-            project.hasProperty('signingKeyAlias')) {
-         println "Found sign properties in gradle.properties! Signing build…"
-
-         signingConfigs {
-              release {
-                   storeFile file(signingStoreLocation)
-                   storePassword System.getenv("KSTOREPWD")
-                   keyAlias signingKeyAlias
-                   keyPassword System.getenv("KSTOREPWD")
-
-              }
-         }
-         buildTypes.release.signingConfig = signingConfigs.release
-    } else {
-         buildTypes.release.signingConfig = null
     }
 }
 
@@ -54,4 +24,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.googlecode.ez-vcard:ez-vcard:0.9.6'
     compile 'com.android.support:cardview-v7:23.1.1'
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
 }
