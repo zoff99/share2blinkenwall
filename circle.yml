@@ -15,8 +15,7 @@ machine:
     _SDK_: /usr/local/android-sdk-linux/
     _JAVA_OPTIONS: "-Xms512m -Xmx1524m"
     JAVA_OPTS: "-Xms512m -Xmx1524m"
-    GRADLE_OPTS: '-Xmx512m -Dorg.gradle.jvmargs="-Xmx2200m -XX:+HeapDumpOnOutOfMemoryError -XX:MaxPermSize=2200m"'
-    SBT_OPTS: "-Xms512M -Xmx2200M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
+    GRADLE_OPTS: '-Xmx512m -Dorg.gradle.jvmargs="-Xmx1700m -XX:+HeapDumpOnOutOfMemoryError -XX:MaxPermSize=1700m"'
     CLASS_P: com.tengu.sharetoclipboard
     START_INTENT_P: com.tengu.sharetoclipboard.MainActivity
     DEBIAN_FRONTEND: noninteractive
@@ -43,21 +42,39 @@ dependencies:
     - echo y | android update sdk --no-ui --all --filter "tools"
     - android list sdk --all | grep -i tools
     - android list sdk --all --extended
+    - echo y | android update sdk --no-ui --all --filter "tools"
 
-    - ~/__sdk_update__.sh build-tools-23.0.0
-    - ~/__sdk_update__.sh build-tools-23.0.1
-    - ~/__sdk_update__.sh build-tools-23.0.2
-    - ~/__sdk_update__.sh build-tools-23.0.3
-    - echo y | android update sdk --no-ui --all --filter build-tools-24.0.3,android-24,extra-android-m2repository # license
-    - echo y | android update sdk --no-ui --all --filter build-tools-25.0.0,android-25,extra-android-m2repository # license
-    - echo y | android update sdk --no-ui --all --filter build-tools-25.1.0
-    - ~/__sdk_update__.sh android-23
+    - echo y | android update sdk --no-ui --all --filter build-tools-23.0.3
+    - echo y | android update sdk --no-ui --all --filter build-tools-24.0.2
+    - echo y | android update sdk --no-ui --all --filter build-tools-24.0.3
+    - echo y | android update sdk --no-ui --all --filter build-tools-25.0.0
+    - echo y | android update sdk --no-ui --all --filter build-tools-25.0.2
+    - echo y | android update sdk --no-ui --all --filter build-tools-25.0.3
+    - echo y | android update sdk --no-ui --all --filter android-16 ; exit 0
+    - echo y | android update sdk --no-ui --all --filter android-21
+    - echo y | android update sdk --no-ui --all --filter android-23
+    - echo y | android update sdk --no-ui --all --filter android-24
     - echo y | android update sdk --no-ui --all --filter android-25
-    - ~/__sdk_update__.sh sys-img-armeabi-v7a-android-23
     - echo y | android update sdk --no-ui --all --filter platform-tools
-    - echo y | android update sdk --no-ui --all --filter extra-android-m2repository
-    - echo y | android update sdk --no-ui --all --filter extra-google-m2repository
-    - echo y | android update sdk --no-ui --all --filter extra-android-support
+
+    - echo y | android update sdk --no-ui --all --filter extra-android-m2repository > /dev/null 2> /dev/null
+    - echo y | android update sdk --no-ui --all --filter extra-google-m2repository > /dev/null 2> /dev/null
+    - echo y | android update sdk --no-ui --all --filter extra-android-support > /dev/null 2> /dev/null
+
+    - echo y | android update sdk --no-ui --all --filter platform-tools-preview > /dev/null 2> /dev/null
+    - echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-21
+    - echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-23 > /dev/null 2> /dev/null
+    - echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-addon-google_apis-google-23 > /dev/null 2> /dev/null
+    - echo y | android update sdk --no-ui --all --filter addon-google_apis-google-23 > /dev/null 2> /dev/null
+
+    - echo ${ANDROID_HOME} ; exit 0
+    - ls -al "${ANDROID_HOME}/licenses" ; exit 0
+
+    - mkdir -p "${ANDROID_HOME}/licenses" ;
+      echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "${ANDROID_HOME}/licenses/android-sdk-license" ;
+      echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "${ANDROID_HOME}/licenses/android-sdk-preview-license" ;
+      echo -e "\nd975f751698a77b662f1254ddbeed3901e976f5a" > "${ANDROID_HOME}/licenses/intel-android-extra-license"
+
 
     #- ./gradlew assembleRelease --info --stacktrace --parallel;
     #- ./gradlew assembleDebug --info --stacktrace --parallel;
