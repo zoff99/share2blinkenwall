@@ -55,6 +55,7 @@ dependencies:
     - android list sdk --all --extended
     - echo y | android update sdk --no-ui --all --filter "tools"
 
+    - echo y | android update sdk --no-ui --all --filter build-tools-23.0.1 # we use this for zipalign
     - echo y | android update sdk --no-ui --all --filter build-tools-23.0.3
     - echo y | android update sdk --no-ui --all --filter build-tools-24.0.2
     - echo y | android update sdk --no-ui --all --filter build-tools-24.0.3
