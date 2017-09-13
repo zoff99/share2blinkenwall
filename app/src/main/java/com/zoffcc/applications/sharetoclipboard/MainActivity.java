@@ -8,8 +8,14 @@ import android.view.WindowManager;
 
 public class MainActivity extends Activity
 {
-
-    private static final String TENGU_URL = "https://metalab.at/";
+    // ------------
+    // -- CONFIG --
+    // ------------
+    static final String Blinkenwall_WS_url_youtube = "echo.websocket.org";
+    static final boolean USE_HTTPS = true;
+    // ------------
+    // -- CONFIG --
+    // ------------
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
