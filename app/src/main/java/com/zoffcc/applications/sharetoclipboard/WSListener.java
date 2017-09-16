@@ -5,6 +5,8 @@ import okhttp3.WebSocket;
 import okhttp3.WebSocketListener;
 import okio.ByteString;
 
+import static com.zoffcc.applications.sharetoclipboard.MainActivity.command_1;
+import static com.zoffcc.applications.sharetoclipboard.MainActivity.command_2;
 import static com.zoffcc.applications.sharetoclipboard.ShareToClipboardActivity.output;
 
 class WSListener extends WebSocketListener
@@ -22,7 +24,7 @@ class WSListener extends WebSocketListener
     public void onOpen(WebSocket webSocket, Response response)
     {
         // webSocket.send("Test");
-        webSocket.send(YOUTUBE_URL);
+        webSocket.send(command_1 + YOUTUBE_URL + command_2);
         // webSocket.send(ByteString.decodeHex("deadbeef"));
         webSocket.close(NORMAL_CLOSURE_STATUS, "Exit");
     }
