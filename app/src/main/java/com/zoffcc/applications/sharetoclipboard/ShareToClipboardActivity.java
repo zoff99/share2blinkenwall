@@ -124,7 +124,7 @@ public class ShareToClipboardActivity extends Activity
 
     static void output(final String txt)
     {
-        Log.i(TAG, "text=" + txt);
+        Log.i(TAG, "" + txt);
     }
 
     private void handleSchemeSpecificPart(Intent intent)

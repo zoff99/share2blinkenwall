@@ -53,6 +53,9 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // don't show keyboard when activity starts
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
         Blinkenwall_WS_url_youtube = Blinkenwall_WS_url_youtube_DEFAULT;
         command_1 = command_1_DEFAULT;
         command_2 = command_2_DEFAULT;
