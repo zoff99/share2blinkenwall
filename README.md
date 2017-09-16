@@ -20,4 +20,4 @@ the latest Development Snapshot can be downloaded from CircleCI, [here](https://
 <img src="https://circleci.com/api/v1/project/zoff99/share2blinkenwall/latest/artifacts/0/$CIRCLE_ARTIFACTS/capture_app_running_2.png?filter=successful&branch=zoff99%2Fdev001" width="148">
 
 
-<img src="https://raw.githubusercontent.com/zoff99/share2blinkenwall/zoff99/dev001/qr_dev001_share2blinkenwall.png" width="160">
+<img src="https://raw.githubusercontent.com/zoff99/share2blinkenwall/zoff99/dev001/qr_dev001_share2blinkenwall.png" width="300">
