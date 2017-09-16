@@ -16,8 +16,8 @@ machine:
     _JAVA_OPTIONS: "-Xms512m -Xmx1524m"
     JAVA_OPTS: "-Xms512m -Xmx1524m"
     GRADLE_OPTS: '-Xmx512m -Dorg.gradle.jvmargs="-Xmx1700m -XX:+HeapDumpOnOutOfMemoryError -XX:MaxPermSize=1700m"'
-    CLASS_P: com.tengu.sharetoclipboard
-    START_INTENT_P: com.tengu.sharetoclipboard.MainActivity
+    CLASS_P: com.zoffcc.applications.sharetoclipboard
+    START_INTENT_P: com.zoffcc.applications.sharetoclipboard.MainActivity
     DEBIAN_FRONTEND: noninteractive
 ###### custom 2 ######
     GRADLE_HOME: ~/g/gradle-custom
