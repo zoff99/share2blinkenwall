@@ -24,7 +24,7 @@ public class MainActivity extends Activity
     // ------------
     // static  String Blinkenwall_WS_url_youtube = "echo.websocket.org";
     static final String Blinkenwall_WS_url_youtube_DEFAULT = "10.20.30.26:1337/blinkenwall";
-    static final String command_1_DEFAULT = "{\"cmd\":\"video play\",\"url\":\"";
+    static final String command_1_DEFAULT = "{\"req\":\"6657\",\"cmd\":\"video play\",\"url\":\"";
     static final String command_2_DEFAULT = "\"}";
     static final boolean USE_HTTPS_DEFAULT = false;
     // ------------
